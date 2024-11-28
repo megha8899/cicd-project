@@ -1,3 +1,2 @@
-sk
-tabulate
-google-cloud-logging
+Flask==2.0.2
+google-cloud-logging==3.0.0
