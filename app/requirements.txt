@@ -1,0 +1,3 @@
+sk
+tabulate
+google-cloud-logging
