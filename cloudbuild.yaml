@@ -1,12 +1,12 @@
 steps:
 # Step 1: Build Docker Image
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'us-central1-docker.pkg.dev/my-1st-project-417317/gcr.io/quickstart-image', './app' ]
+  args: ['build', '-t', 'us-central1-docker.pkg.dev/my-1st-project-417317/cloudrun-repo/quickstart-image', './app' ]
   id: 'Build Docker Image'
 
 # Step 2: Push Docker Image
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'us-central1-docker.pkg.dev/my-1st-project-417317/gcr.io/quickstart-image' ]
+  args: ['push', 'us-central1-docker.pkg.dev/my-1st-project-417317/cloudrun-repo/quickstart-image' ]
   id: 'Push Docker Image'
 
 # Step 3: Deploy to Cloud Run
@@ -17,7 +17,7 @@ steps:
   - -c
   - |
     # Deploy the application to Cloud Run using the correct gcloud command
-    gcloud run deploy quickstart-service --image=us-central1-docker.pkg.dev/my-1st-project-417317/gcr.io/quickstart-image --platform managed --region us-central1 --allow-unauthenticated --port=8080
+    gcloud run deploy quickstart-service --image=us-central1-docker.pkg.dev/my-1st-project-417317/cloudrun-repo/quickstart-image --platform managed --region us-central1 --allow-unauthenticated --port=8080
 
 options:
   logging: CLOUD_LOGGING_ONLY
