@@ -17,7 +17,7 @@ steps:
   - -c
   - |
     # Deploy the application to Cloud Run using the correct gcloud command
-    gcloud run deploy quickstart-service --image=us-central1-docker.pkg.dev/my-1st-project-417317/cloudrun-repo/quickstart-image --platform managed --region us-central1 --allow-unauthenticated --port=8080 --timeout 10m
+    gcloud run deploy quickstart-service --image=us-central1-docker.pkg.dev/my-1st-project-417317/cloudrun-repo/quickstart-image:latest --platform managed --region us-central1 --allow-unauthenticated --port=8080 --timeout 10m
 
 options:
   logging: CLOUD_LOGGING_ONLY
