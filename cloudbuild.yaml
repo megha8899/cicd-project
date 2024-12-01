@@ -7,8 +7,7 @@ steps:
 # Step 2: Push Docker Image
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'us-central1-docker.pkg.dev/my-1st-project-417317/cloudrun-repo/quickstart-image' ]
-  id: 'Push Docker Image
-  args:
+  id: 'Push Docker Image'
   
 # Step 3: Run Unit Tests
 - name: 'python'
