@@ -12,10 +12,8 @@ steps:
 # Step 3: Run Unit Tests
 - name: 'python'
   args:
-    - -m
-    - unittest
-    - -s
-    - test_app.py
+    - 'python'
+    - 'test_app.py'
   id: 'Run Unit Tests'
 
 # Step 4: Deploy to Cloud Run
