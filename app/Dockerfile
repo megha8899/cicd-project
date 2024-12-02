@@ -1,9 +1,9 @@
 FROM python:3.8
 
 EXPOSE 8080
-WORKDIR /app
+WORKDIR /workspace
 
-COPY . ./
+COPY . /workspace
 
 RUN pip install -r requirements.txt
 
