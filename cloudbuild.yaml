@@ -13,7 +13,7 @@ steps:
 - name: 'python'
   args:
     - 'python'
-    - 'test_app.py'
+    - 'app/test_app.py'
   id: 'Run Unit Tests'
 
 # Step 4: Deploy to Cloud Run
