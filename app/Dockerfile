@@ -7,7 +7,7 @@ COPY . /workspace
 
 RUN pip install -r requirements.txt
 
-RUN python -m unittest discover -s app
+RUN source app/venv/bin/activate && python -m unittest discover -s appp
 
 CMD ["python", "app/app.py"]
 
