@@ -8,7 +8,7 @@ COPY . /workspace
 RUN python -m venv /app/venv
 RUN . /app/venv/bin/activate && pip install -r requirements.txt
 
-RUN . /app/venv/bin/activate && python -m unittest discover -s appp
+RUN . /app/venv/bin/activate && python -m unittest discover -s app
 
 CMD ["python", "app/app.py"]
 
