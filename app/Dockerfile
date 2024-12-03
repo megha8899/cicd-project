@@ -1,14 +1,14 @@
 FROM python:3.8
 
 EXPOSE 8080
-WORKDIR /workspace
+WORKDIR /cicd-project
 
-COPY app /workspace/app
+COPY app /cicd-project/app
 
-RUN pip install --no-cache-dir -r /workspace/app/requirements.txt
+RUN pip install --no-cache-dir -r /cicd-project/app/requirements.txt
 
-RUN python -m unittest discover -s /workspace/app
+RUN python -m unittest discover -s /cicd-project/app
 
-CMD ["python", "/workspace/app/app.py"]
+CMD ["python", "/cicd-project/app/app.py"]
 
 
