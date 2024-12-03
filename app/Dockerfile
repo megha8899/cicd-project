@@ -5,10 +5,10 @@ WORKDIR /workspace
 
 COPY . /workspace
 
-RUN python -m venv /app/venv
-RUN . /app/venv/bin/activate && pip install -r requirements.txt
+RUN pip install -r requirements.txt
 
-RUN . /app/venv/bin/activate && python -m unittest discover -s app
+RUN python -m unittest discover -s app
 
 CMD ["python", "app/app.py"]
+
 
