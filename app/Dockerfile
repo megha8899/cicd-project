@@ -3,12 +3,12 @@ FROM python:3.8
 EXPOSE 8080
 WORKDIR /workspace
 
-COPY . /workspace
+COPY app /workspace/app
 
-RUN pip install -r requirements.txt
+RUN pip install --no-cache-dir -r /workspace/app/requirements.txt
 
-RUN python -m unittest discover -s app
+RUN python -m unittest discover -s /workspace/app
 
-CMD ["python", "app/app.py"]
+CMD ["python", "/workspace/app/app.py"]
 
 
