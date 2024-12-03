@@ -1,7 +1,7 @@
 steps:
 # Step 1: Build Docker Image
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'us-central1-docker.pkg.dev/my-1st-project-417317/cloudrun-repo/quickstart-image', './app' ]
+  args: ['build', '-t', 'us-central1-docker.pkg.dev/my-1st-project-417317/cloudrun-repo/quickstart-image', '.' ]
   id: 'Build Docker Image'
 
 # Step 2: Push Docker Image
@@ -12,8 +12,11 @@ steps:
 # Step 3: Run Unit Tests
 - name: 'python'
   args:
-    - 'python'
-    - 'app/test_app.py'
+    - '-m'
+    - 'unittest'
+    - 'discover'
+    - '-s'
+    - '/cicd-project/app'
   id: 'Run Unit Tests'
 
 # Step 4: Deploy to Cloud Run
