@@ -10,7 +10,7 @@ steps:
   id: 'Push Docker Image'
   
 # Step 3: Run Unit Tests
-- name: 'python'
+- name: '/usr/bin/python'
   args:
     - '-m'
     - 'unittest'
