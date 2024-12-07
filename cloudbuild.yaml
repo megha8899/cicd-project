@@ -17,7 +17,7 @@ steps:
     - 'unittest'
     - 'discover'
     - '-s'
-    - '/cicd-project/app'
+    - 'app'
   id: 'Run Unit Tests'
 
 # Step 4: Deploy to Cloud Run
