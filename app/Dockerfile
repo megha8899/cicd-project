@@ -7,6 +7,6 @@ COPY ./app /cicd-project/app
 
 RUN pip install --no-cache-dir -r /cicd-project/app/requirements.txt
 
-CMD ["python", "/cicd-project/app/app.py"]
+CMD ["python", "-m", "unittest", "discover", "-s", "/cicd-project/app"]
 
 
