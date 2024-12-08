@@ -35,7 +35,7 @@ steps:
     - 'discover'
     - '-s'
     - 'app'
-  id: 'Run Unit Tests''
+  id: 'Run Unit Tests'
 
 # Step 4: Deploy to Cloud Run
 - name: 'google/cloud-sdk:latest'
