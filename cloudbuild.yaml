@@ -19,6 +19,7 @@ steps:
     - 'install'
     - '-r'
     - '/cicd-project/app/requirements.txt'
+  id: 'Install Dependencies'
 
 # Run unit tests
 - name: 'python:3.8'
