@@ -21,6 +21,7 @@ steps:
     - '/cicd-project/app/requirements.txt'
   id: 'Install Dependencies'
 
+# Step 4: Run unit tests
 # Run unit tests
 - name: 'python:3.8'
   entrypoint: 'python'
@@ -32,7 +33,7 @@ steps:
     - 'app'
   id: 'Run Unit Tests'
 
-# Step 4: Deploy to Cloud Run
+# Step 5: Deploy to Cloud Run
 - name: 'google/cloud-sdk:latest'
   entrypoint: 'sh'
   args:
