@@ -10,7 +10,25 @@ steps:
   id: 'Push Docker Image'
   
 # Step 3: Run Unit Tests
-- name: '/usr/bin/python'
+- name: 'Install Dependencies'
+  entrypoint: 'python'
+  args:
+    - '-m'
+    - 'ensurepip'
+    - '--upgrade'  
+
+- name: 'Install Required Python Packages'
+  entrypoint: 'python'
+  args:
+    - '-m'
+    - 'pip'
+    - 'install'
+    - '--no-cache-dir'
+    - '-r'
+    - '/cicd-project/app/requirements.txt'  
+
+- name: 'Run Unit Tests'
+  entrypoint: 'python'
   args:
     - '-m'
     - 'unittest'
