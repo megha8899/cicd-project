@@ -10,7 +10,7 @@ steps:
   id: 'Push Docker Image'
 
 # Step 3: Run unit test    
-- name: 'python 3.8'
+- name: 'python:3.8'
   entrypoint: pip
   args: ["install", "-r", "/cicd-project/app/requirements.txt", "--user"]
 
