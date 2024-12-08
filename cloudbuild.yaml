@@ -18,7 +18,7 @@ steps:
     - 'pip'
     - 'install'
     - '-r'
-    - '/cicd-project/app/requirements.txt'
+    - './app/requirements.txt'
   id: 'Install Dependencies'
 
 # Step 4: Run unit tests
@@ -31,6 +31,8 @@ steps:
     - 'discover'
     - '-s'
     - 'app'
+    - '-p'
+    - 'test_app.py'
   id: 'Run Unit Tests'
 
 # Step 5: Deploy to Cloud Run
