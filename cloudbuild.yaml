@@ -12,13 +12,8 @@ steps:
 # Step 3: Run unit test    
 #install dependencies
 - name: 'python:3.8'
-  entrypoint: 'python'
-  args: 
-    - '-m'
-    - 'pip'
-    - 'install'
-    - '-r'
-    - './app/requirements.txt'
+  entrypoint: pip
+  args: ["install", "-r", "app/requirements.txt", "--user"]
   id: 'Install Dependencies'
 
 # Step 4: Run unit tests
