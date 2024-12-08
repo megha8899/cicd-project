@@ -8,16 +8,16 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'us-central1-docker.pkg.dev/my-1st-project-417317/cloudrun-repo/quickstart-image' ]
   id: 'Push Docker Image'
-  
-# Step 3: Run Unit Tests
-- name: 'Install Dependencies'
+
+# Step 3: Run unit test    
+- name: 'python:3.8'  # Valid Docker image
   entrypoint: 'python'
   args:
     - '-m'
     - 'ensurepip'
-    - '--upgrade'  
+    - '--upgrade'
 
-- name: 'Install Required Python Packages'
+- name: 'python:3.8'  # Valid Docker image
   entrypoint: 'python'
   args:
     - '-m'
@@ -25,10 +25,9 @@ steps:
     - 'install'
     - '--no-cache-dir'
     - '-r'
-    - '/cicd-project/app/requirements.txt'  
+    - '/cicd-project/app/requirements.txt'
 
-- name: 'Run Unit Tests'
-- name: 'python'
+- name: 'python:3.8'  # Valid Docker image
   entrypoint: 'python'
   args:
     - '-m'
@@ -36,7 +35,7 @@ steps:
     - 'discover'
     - '-s'
     - 'app'
-  id: 'Run Unit Tests'
+  id: 'Run Unit Tests''
 
 # Step 4: Deploy to Cloud Run
 - name: 'google/cloud-sdk:latest'
