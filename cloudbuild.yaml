@@ -32,7 +32,7 @@ steps:
 
 # Step 5: Deploy to Cloud Run
 - name: google/cloud-sdk
-  args: ['gcloud', 'run', 'deploy', 'helloworld-${SHORT_SHA}', 
+  args: ['gcloud', 'run', 'deploy', 'quickstart-service', 
          '--image=us-central1-docker.pkg.dev/my-1st-project-417317/cloudrun-repo/quickstart-image:latest', 
          '--region', 'us-central1', '--platform', 'managed', 
          '--allow-unauthenticated']
