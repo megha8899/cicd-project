@@ -28,13 +28,14 @@ steps:
     - '/cicd-project/app/requirements.txt'  
 
 - name: 'Run Unit Tests'
+- name: 'python'
   entrypoint: 'python'
   args:
     - '-m'
     - 'unittest'
     - 'discover'
     - '-s'
-    - '/cicd-project/app'
+    - 'app'
   id: 'Run Unit Tests'
 
 # Step 4: Deploy to Cloud Run
