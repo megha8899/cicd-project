@@ -31,14 +31,11 @@ steps:
   id: 'Run Unit Tests'
 
 # Step 5: Deploy to Cloud Run
-- name: 'google/cloud-sdk:latest'
-  entrypoint: 'sh'
-  args:
-  - -xe
-  - -c
-  - |
-    # Deploy the application to Cloud Run using the correct gcloud command
-    gcloud run deploy quickstart-service --image=us-central1-docker.pkg.dev/my-1st-project-417317/cloudrun-repo/quickstart-image:latest --platform managed --region us-central1 --allow-unauthenticated --port=8080 --timeout 10m
-
+- name: google/cloud-sdk
+  args: ['gcloud', 'run', 'deploy', 'helloworld-${SHORT_SHA}', 
+         '--image=us-central1-docker.pkg.dev/my-1st-project-417317/cloudrun-repo/quickstart-image:latest', 
+         '--region', 'us-central1', '--platform', 'managed', 
+         '--allow-unauthenticated'
+         '--port=8080']
 options:
   logging: CLOUD_LOGGING_ONLY
