@@ -32,10 +32,11 @@ steps:
 
 # Step 5: Deploy to Cloud Run
 - name: google/cloud-sdk
-  args: ['gcloud', 'run', 'deploy', 'quickstart-service-${SHORT_SHA}', 
-         '--image=us-central1-docker.pkg.dev/my-1st-project-417317/cloudrun-repo/quickstart-image:${SHORT_SHA}', 
-         '--region', 'us-central1', '--platform', 'managed', 
+  args: ['gcloud', 'run', 'deploy', 'quickstart-service', 
+         '--image=us-central1-docker.pkg.dev/my-1st-project-417317/cloudrun-repo/quickstart-image:latest', 
+         '--region', 'us-central1', '--platform managed', 
          '--allow-unauthenticated',
-         '--port=8080']
+         '--port=8080',
+         '--timeout=15m']
 options:
   logging: CLOUD_LOGGING_ONLY
