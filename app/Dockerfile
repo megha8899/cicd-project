@@ -9,6 +9,5 @@ RUN python -m ensurepip --upgrade
 RUN pip install --no-cache-dir -r /cicd-project/app/requirements.txt
 
 ENTRYPOINT ["python", "-m", "unittest", "discover", "-s", "/cicd-project/app"]
-CMD []
-
+CMD ["pnpm", "run", "preview", "--", "--host", "0.0.0.0", "--port", "8080"]
 
