@@ -5,8 +5,8 @@ WORKDIR /cicd-project
 
 COPY ./app /cicd-project/app
 
-RUN python -m ensurepip --upgrade 
+//RUN python -m ensurepip --upgrade 
 RUN pip install --no-cache-dir -r /cicd-project/app/requirements.txt
 
-ENTRYPOINT ["python", "-m", "unittest", "discover", "-s", "/cicd-project/app"]
+//ENTRYPOINT ["python", "-m", "unittest", "discover", "-s", "/cicd-project/app"]
 CMD ["python", "/cicd-project/app/app.py"]
